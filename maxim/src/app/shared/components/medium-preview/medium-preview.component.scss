@@ -1,0 +1,58 @@
+@import "variables";
+
+:host {
+  position: relative;
+  display: flex;
+}
+
+.sm-preview-container {
+  max-width: 800px;
+}
+
+.rating {
+  margin-left: $mr-sm;
+}
+
+.author {
+  margin-top: $mr-md;
+}
+
+.title {
+  text-align: justify;
+  font-weight: 600;
+  margin-top: $mr-md;
+  margin-bottom: $mr-md;
+}
+
+.description {
+  text-align: justify;
+  overflow: hidden;
+  font-weight: 400;
+  max-height: 40px;
+}
+
+.tags {
+  position: relative;
+  .tag {
+    margin: $mr-sm;
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 7px 12px;
+    border-radius: 2px;
+    align-items: center;
+    max-width: 60px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+}
+
+.image {
+  max-width: 150px;
+  max-height: 150px;
+  margin: auto;
+  display: block;
+}
+
+.left {
+  margin-right: $mr-md;
+}

@@ -1,0 +1,14 @@
+<div fxLayoutAlign="end center" fxLayout="row">
+  <button class="edit-button" [primary]="true" kendoButton (click)="onEditClick.emit()">Edit</button>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="description-block" fxLayout="column">
+    <div>By {{article.createdBy}} on {{article.createdAt|date}}</div>
+    <div>Rating:
+      <stars [maximumStars]="article.rating"></stars>
+    </div>
+  </div>
+</div>
+<h1>{{article.title}}</h1>
+<markdown [data]="article.content"></markdown>
+<tags [tags]="article.tags"></tags>

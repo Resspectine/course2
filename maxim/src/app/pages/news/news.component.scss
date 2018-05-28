@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+.news-display {
+  padding: $pd-gt;
+  position: relative;
+}
+
+.description-block {
+  margin-top: $mr-md;
+}
+
+.edit-button {
+  width: 10rem;
+  max-height: 4rem !important;
+  vertical-align: middle;
+}
+
+:host {
+  width: 100%;
+  display: flex;
+}
+
+markdown {
+  img {
+    max-width: 50%;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}

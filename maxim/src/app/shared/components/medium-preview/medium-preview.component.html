@@ -1,0 +1,21 @@
+<div class="sm-preview-container" fxLayout="row" fxLayoutAlign="space-between" fxFlex="fill">
+  <div class="left" fxFlex="65">
+    <div fxLayout="row">
+      <div class="grey-text">{{preview.articleCategoryId|uppercase}}</div>
+      <div class="rating">Rating
+        <stars [initialRating]="preview.rating" [isEditableMode]="false"></stars>
+      </div>
+    </div>
+    <a [routerLink]="['/categories', preview.articleCategoryId, preview.id]">
+      <h3 class="title">{{preview.title}}</h3>
+    </a>
+    <div class="description grey-text">
+      {{preview.description}}
+    </div>
+    <div class="author">{{preview.createdBy}} on {{preview.createdAt|date}}</div>
+    <tags [tags]="preview.tags"></tags>
+  </div>
+  <div class="right" fxFlex="35" fxLayoutAlign="center center">
+    <img class="image" src="http://www.oiseaux.net/photos/robert.balestra/images/pic.epeiche.roba.3p.jpg">
+  </div>
+</div>

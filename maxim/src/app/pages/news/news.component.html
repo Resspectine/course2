@@ -1,0 +1,9 @@
+<div class="news-display" fxFill>
+  <ng-container *ngIf="article && !isEditableMode">
+    <view-article [article]="article" (onEditClick)="isEditableMode = true"></view-article>
+  </ng-container>
+  <ng-container *ngIf="article && isEditableMode">
+    <edit-article [article]="article" (onSubmitClick)="isEditableMode = false"></edit-article>
+  </ng-container>
+</div>
+

@@ -1,0 +1,9 @@
+<form [formGroup]="profileEditGroup">
+  <div fxLayoutAlign="end center" fxLayout="row">
+    <button type="button" class="edit-button" [primary]="true" kendoButton (click)="onSubmit()"
+            [disabled]="profileEditGroup.invalid">Save
+    </button>
+  </div>
+  <md-editor [formControlName]="'description'" [(ngModel)]="profile.description" [height]="'500px'"
+             [mode]="'editor'"></md-editor>
+</form>

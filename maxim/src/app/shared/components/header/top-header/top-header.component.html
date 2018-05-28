@@ -1,0 +1,37 @@
+<script src="../header.module.ts"></script>
+<div fxLayout="column" class="top-header">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <input kendoTextBox title="search" placeholder="Search" fxFlex="15">
+    <a class="name" [routerLink]="'/'" fxFlex="70" style="text-align: center">LOL NEWS</a>
+    <div fxFlex="15">
+      <button kendoButton *ngIf="!userToken">Sign up</button>
+      <button kendoButton [primary]="true" (click)="open('dialog')" *ngIf="!userToken">Log in</button>
+      <min-profile [userToken]="userToken" *ngIf="userToken"></min-profile>
+    </div>
+  </div>
+  <div style="height: 53.67px">
+    <bottom-header sticky [categories]="categories"></bottom-header>
+  </div>
+</div>
+<kendo-dialog *ngIf="dialogOpened" (close)="close('dialog')" [height]="450" [width]="600" fxFlexAlign="center">
+  <div class="wrapper">
+    <form class="k-form" [formGroup]="loginForm">
+      <label class="k-form-field">
+        <span class="text-size">First Name</span>
+        <input class="k-textbox" placeholder="Your Login" formControlName="login"/>
+      </label>
+      <label class="k-form-field">
+        <span class="text-size">Last Name</span>
+        <input type="password" class="k-textbox" value="" placeholder="Your Password" formControlName="password"/>
+      </label>
+      <label class="k-form-field">
+        <input type="checkbox" name="gender" id="female" class="k-checkbox" formControlName="state">
+        <label class="k-checkbox-label" for="female">Stay logged in</label>
+      </label>
+    </form>
+  </div>
+  <kendo-dialog-actions>
+    <button kendoButton (click)="action('close')">Cancel</button>
+    <button kendoButton (click)="action('login')">Log in</button>
+  </kendo-dialog-actions>
+</kendo-dialog>

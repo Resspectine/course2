@@ -1,0 +1,16 @@
+<div #anchor style="min-width: 180px; text-align: center">
+  <div (click)="onToggle()" class="k-block clickable">{{userToken}}</div>
+</div>
+<div>
+  <kendo-popup class="content" [anchor]="anchor" (anchorViewportLeave)="show = false" *ngIf="show">
+    <a [routerLink]="['/profile', userToken]" (click)="show = false" class="clickable bottom-border" fxLayoutAlign="space-between center">
+      <span>Profile</span>
+      <span class="k-icon k-i-align-justify">
+      </span>
+    </a>
+    <a [routerLink]="['/logout', userToken]" (click)="show = false" class="clickable" fxLayoutAlign="space-between center">
+      <span>Log out</span>
+      <span class="k-icon k-i-logout"></span>
+    </a>
+  </kendo-popup>
+</div>

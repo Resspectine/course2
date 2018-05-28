@@ -1,0 +1,10 @@
+<div class="sm-preview-container" >
+    <div fxLayout="row">
+      <div class="grey-text">{{preview.articleCategory}}</div>
+      <div class="rating">{{preview.rating}}</div>
+    </div>
+  <a [routerLink]="['/categories', preview.articleCategory, preview.id]">
+      <h3 class="title">{{preview.title.slice(0,30).concat('...')}}</h3>
+    </a>
+  <div class="author">{{preview.createdBy}} on {{preview.createdAt|date}}</div>
+</div>

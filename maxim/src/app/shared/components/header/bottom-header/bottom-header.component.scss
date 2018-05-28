@@ -1,0 +1,20 @@
+.category {
+  cursor: pointer;
+  padding: 15px;
+  margin: 0 5px;
+  color: rgba(0, 0, 0, 0.5);
+  &:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+}
+
+.bottom-header {
+  width: 1208px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.15);
+}
+
+:host {
+  z-index: 999;
+}

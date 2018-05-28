@@ -1,0 +1,18 @@
+<div fxLayout="column" fxFill>
+  <div fxLayout="row wrap">
+    <ng-container *ngFor="let pill of pillsModel.pills">
+      <pill [pill]="pill" [pillsModel]="pillsModel" (onRemove)="removePillFromModel($event)"></pill>
+    </ng-container>
+  </div>
+  <input style="width: 100%" kendoTextBox placeholder="Start typing for suggestions..." #input
+         [formControl]="pillsInput">
+  <div class="popup-container">
+    <kendo-popup [anchor]="input" [anchorAlign]="alignOptions" fxFlex="100" *ngIf="suggestedPills?.length>0">
+      <div fxFlexFill fxFlexAlign="column">
+        <div *ngFor="let suggestion of suggestedPills" fxFlexFill (click)="addPillToModel(suggestion)">
+          {{suggestion.name}}
+        </div>
+      </div>
+    </kendo-popup>
+  </div>
+</div>

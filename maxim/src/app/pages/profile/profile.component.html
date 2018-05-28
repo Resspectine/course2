@@ -1,0 +1,26 @@
+<div class="profile-display" fxFill>
+  <ng-container *ngIf="profile && !isEditableMode">
+    <view-profile [profile]="profile" (onEditClick)="isEditableMode = true"></view-profile>
+  </ng-container>
+  <ng-container *ngIf="profile && isEditableMode">
+    <edit-profile [profile]="profile" (onSubmitClick)="isEditableMode = false"></edit-profile>
+  </ng-container>
+  <div class="block">Your news:</div>
+  <div *ngIf="articlesArray">
+    <div *ngFor="let article of articlesArray" fxLayout="row" class="news-block" fxLayoutAlign="space-between center">
+      <medium-preview [preview]="article"></medium-preview>
+      <div>
+        <button class="k-edit-buttons edit-button" kendoButton [icon]="'edit'"
+                [primary]="true"
+                (click)="isEditableMode = !isEditableMode"
+                [routerLink]="['/categories', article.articleCategory, article.id]">Edit
+        </button>
+        <button class="k-edit-buttons edit-button" kendoButton [icon]="'delete'"
+                [primary]="true"
+                (click)="isEditableMode = !isEditableMode">Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

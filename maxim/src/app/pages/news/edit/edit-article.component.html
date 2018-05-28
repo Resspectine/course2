@@ -1,0 +1,24 @@
+<div drag-and-drop-img>
+  <form [formGroup]="articleEditForm">
+    <div fxLayoutAlign="end center" fxLayout="row">
+      <button type="button" class="edit-button" [primary]="true" kendoButton (click)="onSubmit()"
+              [disabled]="articleEditForm.invalid">Save
+      </button>
+    </div>
+    <div fxLayout="column">
+      <kendo-textbox-container floatingLabel="Title" fxFlexFill>
+        <textarea [formControlName]="'title'" kendoTextArea></textarea>
+      </kendo-textbox-container>
+      <kendo-textbox-container floatingLabel="Description" fxFlexFill>
+        <textarea [formControlName]="'description'" kendoTextArea></textarea>
+      </kendo-textbox-container>
+    </div>
+    <md-editor [formControlName]="'content'" [(ngModel)]="article.content" [height]="'500px'"
+               [mode]="'editor'"></md-editor>
+    <div fxFlex="50">Tags:
+      <pills-input [selectedPills]="tagPills"
+                   [suggestions]="[{name:'hui', value:'228'}]"
+                   (onUpdate)="articleEditForm.controls['tags'].setValue(toTags($event))"></pills-input>
+    </div>
+  </form>
+</div>

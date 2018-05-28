@@ -1,0 +1,4 @@
+<span (mouseleave)="fillStars(initialRating)">
+  <span *ngFor="let star of stars" class="k-icon" [ngClass]="star.isFiled? 'k-i-star':'k-i-star-outline'"
+        (mouseover)="onMouseOver($event, star)" (click)="onClick($event, star)"></span>
+</span>

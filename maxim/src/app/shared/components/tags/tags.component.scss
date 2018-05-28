@@ -1,0 +1,15 @@
+@import "../../../../styles/variables";
+
+.tags {
+  position: relative;
+  .tag {
+    margin: $mr-sm;
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 7px 12px;
+    border-radius: 2px;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,6 @@
+<div *ngIf="topNews" fxFlex="fill">
+  <h2 style="border-bottom: 1px solid rgba(0,0,0,.15)">Top rated:</h2>
+  <ng-container *ngFor="let preview of topNews">
+    <small-preview class="sm-preview" [preview]="preview"></small-preview>
+  </ng-container>
+</div>

@@ -1,0 +1,26 @@
+@import "variables";
+
+:host {
+  position: relative;
+  display: flex;
+}
+
+.sm-preview-container {
+  max-width: 800px;
+}
+
+.rating {
+  margin-left: $mr-sm;
+}
+
+.author {
+  margin-top: $mr-md;
+}
+
+.title {
+  text-align: justify;
+  font-weight: 600;
+  margin-top: $mr-md;
+  margin-bottom: $mr-md;
+}
+
